@@ -3,15 +3,15 @@
   <head>
     <title>Appletimer</title>
     <meta charset="UTF-8" />
-    <meta name="robots" content="noindex">
-    <meta name="theme-color" content="#e90700">
-    <meta name="title" content="Appletimer">
-    <meta name="description" content="Time the apple">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Appletimer">
-    <meta name="twitter:description" content="Time the apple">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Time the apple">
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#e90700" />
+    <meta name="title" content="Appletimer" />
+    <meta name="description" content="Time the apple" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Appletimer" />
+    <meta name="twitter:description" content="Time the apple" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Time the apple" />
   </head>
 
   <body>
@@ -42,7 +42,7 @@
           remaining = Object.keys(parts)
             .map((part) => {
               if (!parts[part]) return;
-              return `${parts[part]}:`;
+              return `${String("0000" + parts[part]).slice(-2)}:`;
             })
             .join(" ");
         }
