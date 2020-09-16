@@ -41,7 +41,7 @@
 
           remaining = Object.keys(parts)
             .map((part) => {
-              if (!parts[part]) return;
+              if (!parts[part]) return "00:";
               return `${String("0000" + parts[part]).slice(-2)}:`;
             })
             .join(" ");
