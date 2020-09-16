@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Appletimer</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>Appletimer</h1>
+    <div id="countdown"></div>
+    <style>
+      body {
+        font-family: "Segoe UI", Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 4vw;
+      }
+    </style>
+    <script>
+      const countdownTimer = () => {
+        const difference = +new Date("2020-11-03") - +new Date();
+        let remaining = "Haha gone!";
+
+        if (difference > 0) {
+          const parts = {
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((difference / 1000 / 60) % 60),
+            seconds: Math.floor((difference / 1000) % 60)
+          };
+
+          remaining = Object.keys(parts)
+            .map((part) => {
+              if (!parts[part]) return;
+              return `${parts[part]}:`;
+            })
+            .join(" ");
+        }
+
+        document.getElementById("countdown").innerHTML =
+          "<b>" + remaining.toUpperCase().slice(0, -1) + "</b><br>left";
+      };
+
+      countdownTimer();
+      setInterval(countdownTimer, 1000);
+    </script>
+  </body>
+</html>
