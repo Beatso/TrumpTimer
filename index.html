@@ -48,7 +48,7 @@
         }
 
         document.getElementById("countdown").innerHTML =
-          "<b>" + remaining.toUpperCase().slice(0, -1) + "</b><br>left";
+          "<span style=font-size:2vh;font-weight:700;>DAYS : HRS : MINS : SECS</span><br><b>" + remaining.toUpperCase().slice(0, -1) + "</b><br>left";
       };
 
       countdownTimer();
